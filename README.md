@@ -25,6 +25,8 @@
  * ```grunt clear```   删除构建目录
  * ```grunt jshint```  检查js
  * ```grunt csslint``` 检查css
+ * ```compass watch --output-style nested``` compass 监听目录
+ * ```sass  --watch src:build``` sass 监听目录
 
 
 ###### 比较适用于个人项目，或者练习DEMO

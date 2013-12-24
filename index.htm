@@ -15,17 +15,32 @@
 			}
 		}())
 	</script>-->
-	<link rel="stylesheet" href="./build/css/main.css" />
 	<link rel="stylesheet" href="./build/css/mobile.base.css" />
+	<link rel="stylesheet" href="./build/css/main.css" />
 </head>
 <body>
-	<div id="page">
-		11
+<style>.delete { display: none; }</style>
 
-	</div>
-	<script type="text/javascript" src="./build/js/jquery.js"></script>
+<ul id=items>
+  <li>List item 1 <span class=delete>DELETE</span></li>
+  <li>List item 2 <span class=delete>DELETE</span></li>
+</ul>
+
+<script>
+// show delete buttons on swipe
+$('#items li').swipe(function(){
+  $('.delete').hide()
+  $('.delete', this).show()
+})
+
+// delete row on tapping delete button
+$('.delete').tap(function(){
+  $(this).parent('li').remove()
+})
+</script>
+	<!--<script type="text/javascript" src="./build/js/jquery.js"></script>-->
 	<script type="text/javascript" src="./build/js/zepto.js"></script>
 	<script type="text/javascript" src="./build/js/main.js"></script>
-	<script type="text/javascript" src="./build/js/swipe.js"></script>
+	<!--<script type="text/javascript" src="./build/js/swipe.js"></script>-->
 </body>
 </html>
