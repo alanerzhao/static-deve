@@ -1,13 +1,4 @@
-@mixin flex {
-	display:-webkit-flex;
-	display:-moz-flex;
-	display:flex;
-}
-@mixin flex-item ($num) {
-	-webkit-flex:$num;
-	-moz-flex:$num;
-	flex:$num;
-}
+@charset "utf-8";
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -22,12 +13,47 @@
   -webkit-flex:  $values;
   -ms-flex:  $values;
   flex:  $values;
+ // float:left; /*QQ*/
 }
+/*混入格式 todo 多态*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
 
+}
 @mixin order($val) {
   -webkit-box-ordinal-group: $val;  
   -moz-box-ordinal-group: $val;     
   -ms-flex-order: $val;     
   -webkit-order: $val;  
   order: $val;
+}
+
+
+
+/*http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios*/
+/* Calculate fluid ratio based on two dimensions (width/height) */
+@mixin fluid-ratio($large-size, $small-size) {
+  $width-large: nth($large-size, 1);
+  $width-small: nth($small-size, 1);
+  $height-large: nth($large-size, 2);
+  $height-small: nth($small-size, 2);
+  $slope: ($height-large - $height-small) / ($width-large - $width-small);
+  $height: $height-small - $width-small * $slope;
+  padding-top: $slope * 100%;
+  height: $height;
+
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+}
+
+figure.fluidratio {
+  /* This element will have fluid ratio from 4:1 at 800px to 2:1 at 300px. */
+  @include fluid-ratio(800px 200px, 300px 150px);
+
+  background-image: url(http://voormedia.com/examples/amsterdam.jpg);
 }

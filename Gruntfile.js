@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 					//当前目录
 					hostname: '127.0.0.1',
 					livereload: true,
-					open: 'http://127.0.0.1:4000/index.htm',
+					open: 'http://127.0.0.1:4000/mobile.htm',
 				}
 			}
 		},
