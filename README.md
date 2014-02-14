@@ -18,6 +18,7 @@
 
 ### 使用方法  
 
+ * ```npm install```   初始化配置文件
  * ```grunt```         初始化项目目录
  * ```grunt server```  打开一个服务器，默认监听```index.htm``` 此时更改```sass```,```js```会自动刷新
  * ```grunt build```   优化压缩css js 完成developer
