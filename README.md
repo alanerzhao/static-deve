@@ -2,6 +2,8 @@
 ---------
 ### 应用场景  
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alanerzhao/static-deve.svg)](https://greenkeeper.io/)
+
  * 静态页面制作
  * 更改即刷新页面
  * ```css```,```js```,检查,压缩
